@@ -135,7 +135,7 @@
                 </div>
             </div>
 
-            <!-- Top Right Language Switcher Button -->
+            <!-- Language Switcher Button -->
             <button onclick="toggleLanguage()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-xs lg:text-sm transition shadow-lg">
                 <i data-lucide="languages" class="w-4 h-4 text-indigo-400"></i>
                 <span id="lang-btn-text">中文</span>
@@ -213,14 +213,15 @@
             </div>
         </section>
 
+        <!-- Booking Section with Inline Form -->
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h2 data-key="booking-title" class="text-2xl lg:text-3xl font-bold font-heading text-white">Book a Session</h2>
                 <p data-key="booking-subtitle" class="text-slate-400 text-sm">Simple, transparent pricing for 1-on-1 health coaching.</p>
             </div>
 
-            <div class="max-w-md mx-auto">
-                <div class="glass-card rounded-2xl p-8 flex flex-col items-center text-center space-y-5 border-2 border-indigo-500 shadow-xl shadow-indigo-500/10">
+            <div class="max-w-lg mx-auto">
+                <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center space-y-5 border-2 border-indigo-500 shadow-xl shadow-indigo-500/10 transition-all">
                     <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
                         <i data-lucide="video" class="w-6 h-6"></i>
                     </div>
@@ -229,13 +230,51 @@
                         <span data-key="skype-rate" class="text-slate-400 text-sm"> / 60-minute Skype call</span>
                     </div>
                     <p data-key="skype-desc" class="text-sm text-slate-400">1-on-1 health coaching, nutrition guidance, and personalized wellness planning &mdash; all over Skype.</p>
-                    <a href="skype:everydaylotus?call" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
-                        <span data-key="skype-btn">Book a Skype Call</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                    
+                    <button onclick="toggleBookingForm()" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
+                        <span data-key="skype-btn">Book a Skype Call</span> <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </button>
+
+                    <!-- Small Payment Method Subtext -->
+                    <p data-key="payment-subtext" class="text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5 -mt-2">
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5 text-emerald-400"></i> Pay with Venmo / PayPal
+                    </p>
+
+                    <!-- Inline Booking Form (Initially Hidden) -->
+                    <div id="booking-form-container" class="hidden w-full text-left space-y-4 pt-4 border-t border-white/10 animate-fade-in">
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-user-email" class="text-xs font-semibold text-slate-300">Your Email Address</label>
+                            <input type="email" id="user-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-send-email" class="text-xs font-semibold text-slate-300">Send To Email Address</label>
+                            <input type="email" value="everydaylotus.info@gmail.com" readonly class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/50 border border-white/10 text-indigo-300 font-medium text-sm cursor-not-allowed">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-datetime" class="text-xs font-semibold text-slate-300">Desired Date & Time</label>
+                            <input type="datetime-local" id="desired-datetime" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                            <button onclick="submitBooking()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs lg:text-sm transition shadow-md flex items-center justify-center gap-2">
+                                <span data-key="btn-send">Send Request</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <span data-key="form-notice" class="text-[11px] text-slate-400 italic leading-snug text-center sm:text-left">
+                                Once we get your email we will contact you as early as possible.
+                            </span>
+                        </div>
+
+                        <div id="booking-confirmation" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
+                            Request received! We will reach out to you shortly.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- YouTube Section -->
         <section class="glass-card rounded-3xl p-6 lg:p-8 space-y-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
@@ -478,6 +517,28 @@
             player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         }
 
+        function toggleBookingForm() {
+            const form = document.getElementById('booking-form-container');
+            form.classList.toggle('hidden');
+        }
+
+        function submitBooking() {
+            const userEmail = document.getElementById('user-email').value;
+            const datetime = document.getElementById('desired-datetime').value;
+            const confirmBox = document.getElementById('booking-confirmation');
+
+            if (!userEmail || !datetime) {
+                alert(currentLang === 'en' ? 'Please fill in your email address and desired date/time.' : '請填寫您的電子郵件地址與期望的日期和時間。');
+                return;
+            }
+
+            confirmBox.classList.remove('hidden');
+            setTimeout(() => {
+                confirmBox.classList.add('hidden');
+                document.getElementById('booking-form-container').classList.add('hidden');
+            }, 4000);
+        }
+
         let currentLang = 'en';
 
         const translations = {
@@ -503,6 +564,12 @@
                 "skype-rate": " / 60-minute Skype call",
                 "skype-desc": "1-on-1 health coaching, nutrition guidance, and personalized wellness planning — all over Skype.",
                 "skype-btn": "Book a Skype Call",
+                "payment-subtext": "Pay with Venmo / PayPal",
+                "lbl-user-email": "Your Email Address",
+                "lbl-send-email": "Send To Email Address",
+                "lbl-datetime": "Desired Date & Time",
+                "btn-send": "Send Request",
+                "form-notice": "Once we get your email we will contact you as early as possible.",
                 "featured-tag": "Featured Content",
                 "featured-title": "Top 5 YouTube Video Guides",
                 "featured-subtitle": "Explore our top-rated nutrition, fasting, and metabolic health guides.",
@@ -549,6 +616,12 @@
                 "skype-rate": " / 60 分鐘 Skype 線上諮詢",
                 "skype-desc": "一對一健康教練、營養指導與個人化健康規劃 — 全部透過 Skype 進行。",
                 "skype-btn": "預約 Skype 諮詢",
+                "payment-subtext": "支援 Venmo / PayPal 付款",
+                "lbl-user-email": "您的電子郵件地址",
+                "lbl-send-email": "發送至電子郵件",
+                "lbl-datetime": "期望的日期與時間",
+                "btn-send": "發送預約請求",
+                "form-notice": "收到您的郵件後，我們將儘快與您聯繫。",
                 "featured-tag": "精選內容",
                 "featured-title": "熱門 YouTube 影片指南 Top 5",
                 "featured-subtitle": "探索我們最受好評的營養、斷食與代謝健康指南。",
