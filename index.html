@@ -334,6 +334,63 @@
                     </div>
                 </div>
 
+                <!-- 3. Fix My Fridge (Orange County) Card -->
+                <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center space-y-5 border-2 border-cyan-500 shadow-xl shadow-cyan-500/10 transition-all">
+                    <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="refrigerator" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-4xl font-extrabold text-white">$180</span>
+                        <span data-key="fridge-rate" class="text-slate-400 text-sm"> / 2 hrs</span>
+                    </div>
+                    <p data-key="fridge-desc" class="text-sm text-slate-400">In-person home fridge consultation in Orange County to overhaul your pantry, remove hidden triggers, and restock clean.</p>
+                    
+                    <button onclick="toggleBookingForm('fridge')" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
+                        <span data-key="fridge-btn">Book Fix My Fridge</span> <i data-lucide="home" class="w-4 h-4"></i>
+                    </button>
+
+                    <!-- Small Payment Method Subtext -->
+                    <p data-key="payment-subtext-3" class="text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5 -mt-2">
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5 text-emerald-400"></i> Pay with Venmo / PayPal
+                    </p>
+
+                    <!-- Inline Booking Form (Fix My Fridge) -->
+                    <div id="fridge-form-container" class="hidden w-full text-left space-y-4 pt-4 border-t border-white/10 animate-fade-in">
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-user-email" class="text-xs font-semibold text-slate-300">Your Email Address</label>
+                            <input type="email" id="fridge-user-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-send-email" class="text-xs font-semibold text-slate-300">Send To Email Address</label>
+                            <input type="email" value="everydaylotus.info@gmail.com" readonly class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/50 border border-white/10 text-cyan-300 font-medium text-sm cursor-not-allowed">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-home-zipcode" class="text-xs font-semibold text-slate-300">Your Home Zipcode</label>
+                            <input type="text" id="fridge-user-zipcode" placeholder="e.g. 92840" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-datetime" class="text-xs font-semibold text-slate-300">Desired Date & Time</label>
+                            <input type="datetime-local" id="fridge-desired-datetime" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                            <button onclick="submitBooking('fridge')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs lg:text-sm transition shadow-md flex items-center justify-center gap-2">
+                                <span data-key="btn-send">Send Request</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <span data-key="form-notice" class="text-[11px] text-slate-400 italic leading-snug text-center sm:text-left">
+                                Once we get your email we will contact you as early as possible.
+                            </span>
+                        </div>
+
+                        <div id="fridge-booking-confirmation" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
+                            Request received! We will reach out to you shortly.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -629,9 +686,14 @@
                 "skype-btn": "Book a Skype Call",
                 "payment-subtext": "Pay with Venmo / PayPal",
                 "payment-subtext-2": "Pay with Venmo / PayPal",
+                "payment-subtext-3": "Pay with Venmo / PayPal",
                 "inperson-rate": " / hr",
                 "inperson-desc": "Meet in person in Orange County for tailored 1-on-1 health coaching and lifestyle guidance.",
                 "inperson-btn": "Book In-Person Session",
+                "fridge-rate": " / 2 hrs",
+                "fridge-desc": "In-person home fridge consultation in Orange County to overhaul your pantry, remove hidden triggers, and restock clean.",
+                "fridge-btn": "Book Fix My Fridge",
+                "lbl-home-zipcode": "Your Home Zipcode",
                 "lbl-desired-location": "Desired Location",
                 "opt-park": "Park",
                 "opt-coffeeshop": "Coffee Shop",
@@ -688,9 +750,14 @@
                 "skype-btn": "預約 Skype 諮詢",
                 "payment-subtext": "支援 Venmo / PayPal 付款",
                 "payment-subtext-2": "支援 Venmo / PayPal 付款",
+                "payment-subtext-3": "支援 Venmo / PayPal 付款",
                 "inperson-rate": " / 小時",
                 "inperson-desc": "於加州橘郡（Orange County）進行面對面客製化一對一健康與生活方式指導諮詢。",
                 "inperson-btn": "預約面對面諮詢",
+                "fridge-rate": " / 2 小時",
+                "fridge-desc": "橘郡到府冰箱與儲藏室健康大掃除，清除致發炎隱患，重新建構潔淨飲食環境。",
+                "fridge-btn": "預約冰箱健康改造",
+                "lbl-home-zipcode": "您的居住地郵遞區號",
                 "lbl-desired-location": "期望地點",
                 "opt-park": "公園",
                 "opt-coffeeshop": "咖啡館",
