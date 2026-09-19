@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts: Outift & Plus Jakarta Sans -->
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -57,18 +57,18 @@
     <style>
         /* CSS Variables for Dynamic Theme Switching */
         :root {
-            --bg-primary: #090d16;
-            --bg-card: rgba(15, 23, 42, 0.7);
-            --bg-card-hover: rgba(30, 41, 59, 0.8);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --accent-primary: #10b981;
-            --accent-secondary: #14b8a6;
-            --accent-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            --text-heading: #ffffff;
-            --text-body: #94a3b8;
-            --badge-bg: rgba(16, 185, 129, 0.15);
-            --badge-text: #34d399;
-            --glass-glow: rgba(16, 185, 129, 0.15);
+            --bg-primary: #0d131f;
+            --bg-card: rgba(18, 26, 43, 0.8);
+            --bg-card-hover: rgba(26, 38, 64, 0.9);
+            --border-color: rgba(99, 102, 241, 0.25);
+            --accent-primary: #6366f1;
+            --accent-secondary: #10b981;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+            --text-heading: #f8fafc;
+            --text-body: #a1a1aa;
+            --badge-bg: rgba(99, 102, 241, 0.2);
+            --badge-text: #818cf8;
+            --glass-glow: rgba(99, 102, 241, 0.22);
         }
 
         /* Theme Option 1: Emerald Cyber / Emerald Dark */
@@ -103,7 +103,7 @@
             --glass-glow: rgba(234, 179, 8, 0.18);
         }
 
-        /* Theme Option 3: Modern Clean Zen (Version 3 Highlight) */
+        /* Theme Option 3: Modern Clean Zen (Version 3) */
         [data-theme="theme-3"] {
             --bg-primary: #0d131f;
             --bg-card: rgba(18, 26, 43, 0.8);
@@ -229,7 +229,7 @@
                         <!-- Glowing Ring Around Headshot -->
                         <div class="absolute -inset-1 rounded-full accent-gradient-bg opacity-75 blur transition duration-500 group-hover:opacity-100 animate-pulse-glow"></div>
                         
-                        <!-- USER SPECIFIED HEADSHOT IMAGE -->
+                        <!-- HEADSHOT THUMBNAIL IMAGE -->
                         <img id="headshot-img" src="headshot 380x380.jpg" alt="Everyday Lotus Health Coach Headshot" class="relative w-44 h-44 lg:w-52 lg:h-52 rounded-full object-cover border-4 border-slate-900 shadow-2xl">
                         
                         <div class="absolute bottom-2 right-2 p-2 rounded-full bg-emerald-500 text-white border-2 border-slate-900 shadow-lg" title="Verified Practitioner">
@@ -257,7 +257,7 @@
                 <div class="lg:col-span-8 space-y-5">
                     <div>
                         <span class="custom-badge text-xs uppercase tracking-wider font-bold px-3 py-1 rounded-md">
-                            Tailored Personal Coaching & Digital Media
+                            1-on-1 Virtual Consultations
                         </span>
                         <h1 class="text-3xl lg:text-4xl font-extrabold font-heading mt-2 tracking-tight text-white leading-tight">
                             Empower Your Health with <span class="accent-gradient-text">Sustainable, Science-Backed</span> Everyday Habits.
@@ -284,9 +284,9 @@
                         </div>
                         <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition">
                             <div class="flex items-center gap-2.5 text-cyan-400 font-semibold mb-1 text-sm">
-                                <i data-lucide="video" class="w-4 h-4"></i> Creator Reach
+                                <i data-lucide="video" class="w-4 h-4"></i> Virtual Skype Coaching
                             </div>
-                            <p class="text-xs text-slate-400">Inspiring 50K+ subscribers with clean ingredient swaps & video guides.</p>
+                            <p class="text-xs text-slate-400">Direct 1-on-1 video consultations accessible from anywhere worldwide.</p>
                         </div>
                     </div>
                 </div>
@@ -294,134 +294,43 @@
             </div>
         </section>
 
-        <!-- RATE CARD & CONSULTING SERVICES SECTION -->
-        <section class="space-y-6">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h2 class="text-2xl lg:text-3xl font-bold font-heading text-white">Services & Rate Card</h2>
-                <p class="text-slate-400 text-sm">Transparent pricing for 1-on-1 health consultations, media sponsorships, and custom meal planning programs.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Tier 1 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">1-on-1 Coaching</span>
-                                <h3 class="text-xl font-bold text-white mt-1">Metabolic Kickstart</h3>
-                            </div>
-                            <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400">
-                                <i data-lucide="zap" class="w-5 h-5"></i>
-                            </div>
-                        </div>
-
-                        <div class="py-2">
-                            <span class="text-3xl font-extrabold text-white">$149</span>
-                            <span class="text-slate-400 text-xs"> / 60-min session</span>
-                        </div>
-
-                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-4">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Comprehensive Diet & Macro Diagnostic
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Low-Carb / Gluten-Free Swap Guide
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Custom Post-Meal Walk Protocol
-                            </li>
-                            <li class="flex items-center gap-2 text-slate-500">
-                                <i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> Unlimited WhatsApp Chat Support
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button class="w-full mt-6 py-2.5 rounded-xl border border-indigo-500/40 hover:bg-indigo-600/20 text-indigo-300 font-semibold text-sm transition-all flex items-center justify-center gap-2">
-                        Book Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
+        <!-- SINGLE CONSULTATION RATE CARD SECTION -->
+        <section class="max-w-2xl mx-auto space-y-6">
+            <div class="glass-card rounded-3xl p-8 border-2 border-indigo-500/50 relative hover:scale-[1.01] transition-transform duration-300 shadow-2xl shadow-indigo-500/10 text-center">
+                
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full accent-gradient-bg text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md">
+                    <i data-lucide="video" class="w-4 h-4"></i> 1-on-1 Health Coaching
                 </div>
 
-                <!-- Tier 2 (Featured) -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-2 border-indigo-500 relative hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-indigo-500/10">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full accent-gradient-bg text-white text-[10px] font-extrabold uppercase tracking-widest shadow-md">
-                        Most Popular Program
+                <h2 class="text-3xl font-extrabold font-heading text-white">60 Minutes Skype Call</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-md mx-auto">Get personalized guidance, custom nutrition adjustments, and tailored fitness protocols directly with your coach.</p>
+
+                <div class="py-6 my-4 border-y border-white/10 flex flex-col items-center justify-center">
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-5xl font-black text-white">$75</span>
+                        <span class="text-slate-400 font-semibold text-lg">/ hr</span>
                     </div>
-
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start pt-1">
-                            <div>
-                                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Comprehensive Transformation</span>
-                                <h3 class="text-xl font-bold text-white mt-1">4-Week Lotus Protocol</h3>
-                            </div>
-                            <div class="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
-                                <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            </div>
-                        </div>
-
-                        <div class="py-2">
-                            <span class="text-3xl font-extrabold text-white">$499</span>
-                            <span class="text-slate-400 text-xs"> / 1-month intensive</span>
-                        </div>
-
-                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-4">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> 4x 45-Min Weekly Video Calls
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Personalized Low-Glycemic Meal Plans
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Daily Treadmill & Walking Routine
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Priority Coach Messaging Support
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button class="w-full mt-6 py-2.5 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
-                        Apply Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
+                    <p class="text-xs text-indigo-400 font-medium mt-1">Full 60-minute interactive video session</p>
                 </div>
 
-                <!-- Tier 3 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Brand Sponsorship</span>
-                                <h3 class="text-xl font-bold text-white mt-1">Media & Product Review</h3>
-                            </div>
-                            <div class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400">
-                                <i data-lucide="video" class="w-5 h-5"></i>
-                            </div>
-                        </div>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-xs text-slate-300 mb-8 max-w-lg mx-auto">
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Customized Diet & Macro Audit
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Low-Carb & GF Grocery Guidance
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Post-Meal Walking Routine Setup
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Skype Video Call Link Included
+                    </li>
+                </ul>
 
-                        <div class="py-2">
-                            <span class="text-3xl font-extrabold text-white">$850</span>
-                            <span class="text-slate-400 text-xs"> / YouTube Feature</span>
-                        </div>
-
-                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-4">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Dedicated YouTube Video Segment (60-90s)
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Clean Ingredient Audit & Tasting
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Social Media & Newsletter Feature
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Dedicated Affiliate & Link Integration
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button class="w-full mt-6 py-2.5 rounded-xl border border-cyan-500/40 hover:bg-cyan-600/20 text-cyan-300 font-semibold text-sm transition-all flex items-center justify-center gap-2">
-                        Inquire Media Kit <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
+                <button class="w-full sm:w-auto px-8 py-3.5 rounded-xl accent-gradient-bg text-white font-bold text-base shadow-xl transition-all flex items-center justify-center gap-2 mx-auto hover:opacity-95">
+                    Book Skype Consultation ($75) <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
             </div>
         </section>
 
@@ -449,7 +358,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 
                 <!-- Video 1 -->
-                <div onclick="playVideo('dQw4w9WgXcQ', 'Top 10 Low-Carb & Gluten-Free Supermarket Finds', '124K views • 2 weeks ago')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
+                <div onclick="playVideo('dQw4w9WgXcQ')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80" alt="Grocery Haul" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
@@ -464,7 +373,7 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div onclick="playVideo('dQw4w9WgXcQ', 'Why 20-Min Post-Meal Walking Changes Metabolic Health', '98K views • 1 month ago')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
+                <div onclick="playVideo('dQw4w9WgXcQ')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="Walking Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
@@ -479,7 +388,7 @@
                 </div>
 
                 <!-- Video 3 -->
-                <div onclick="playVideo('dQw4w9WgXcQ', 'Clean Protein Crackers & Healthy Snack Breakdown', '85K views • 1 month ago')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
+                <div onclick="playVideo('dQw4w9WgXcQ')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=400&q=80" alt="Snack Review" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
@@ -494,7 +403,7 @@
                 </div>
 
                 <!-- Video 4 -->
-                <div onclick="playVideo('dQw4w9WgXcQ', '30-Minute Treadmill Incline Walk Workout Routine', '150K views • 2 months ago')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
+                <div onclick="playVideo('dQw4w9WgXcQ')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=400&q=80" alt="Treadmill Incline" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
@@ -509,7 +418,7 @@
                 </div>
 
                 <!-- Video 5 -->
-                <div onclick="playVideo('dQw4w9WgXcQ', 'Understanding Seed Oils & Healthy Fat Alternatives', '210K views • 3 months ago')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
+                <div onclick="playVideo('dQw4w9WgXcQ')" class="video-card glass-card rounded-xl p-3 cursor-pointer hover:border-indigo-500 transition group space-y-2">
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80" alt="Healthy Oils" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
@@ -538,19 +447,19 @@
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Low-Carb Meal Consultations
+                    <i data-lucide="video" class="w-3.5 h-3.5 text-indigo-400"></i> $75/hr 60-Min Skype Calls
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Gluten-Free Nutrition Guides
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Low-Carb & GF Nutrition Guides
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> 30-Min Incline Walking Protocols
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Incline Walking Protocols
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2 text-cyan-400">
-                    <i data-lucide="video" class="w-3.5 h-3.5"></i> New YouTube Video Every Tuesday!
+                    <i data-lucide="youtube" class="w-3.5 h-3.5"></i> New YouTube Video Every Tuesday!
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2 text-amber-400">
@@ -566,19 +475,19 @@
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Low-Carb Meal Consultations
+                    <i data-lucide="video" class="w-3.5 h-3.5 text-indigo-400"></i> $75/hr 60-Min Skype Calls
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Gluten-Free Nutrition Guides
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Low-Carb & GF Nutrition Guides
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> 30-Min Incline Walking Protocols
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Incline Walking Protocols
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2 text-cyan-400">
-                    <i data-lucide="video" class="w-3.5 h-3.5"></i> New YouTube Video Every Tuesday!
+                    <i data-lucide="youtube" class="w-3.5 h-3.5"></i> New YouTube Video Every Tuesday!
                 </span>
                 <span class="text-slate-500">•</span>
                 <span class="flex items-center gap-2 text-amber-400">
@@ -610,7 +519,7 @@
         }
 
         // Interactive Video Player Handler
-        function playVideo(videoId, title, stats) {
+        function playVideo(videoId) {
             const player = document.getElementById('youtube-player');
             player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         }
