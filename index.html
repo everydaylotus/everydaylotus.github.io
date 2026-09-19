@@ -220,7 +220,9 @@
                 <p data-key="booking-subtitle" class="text-slate-400 text-sm">Simple, transparent pricing for 1-on-1 health coaching.</p>
             </div>
 
-            <div class="max-w-lg mx-auto">
+            <div class="max-w-lg mx-auto space-y-6">
+                
+                <!-- 1. Skype Call Card -->
                 <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center space-y-5 border-2 border-indigo-500 shadow-xl shadow-indigo-500/10 transition-all">
                     <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
                         <i data-lucide="video" class="w-6 h-6"></i>
@@ -231,7 +233,7 @@
                     </div>
                     <p data-key="skype-desc" class="text-sm text-slate-400">1-on-1 health coaching, nutrition guidance, and personalized wellness planning &mdash; all over Skype.</p>
                     
-                    <button onclick="toggleBookingForm()" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
+                    <button onclick="toggleBookingForm('skype')" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
                         <span data-key="skype-btn">Book a Skype Call</span> <i data-lucide="calendar" class="w-4 h-4"></i>
                     </button>
 
@@ -240,11 +242,11 @@
                         <i data-lucide="credit-card" class="w-3.5 h-3.5 text-emerald-400"></i> Pay with Venmo / PayPal
                     </p>
 
-                    <!-- Inline Booking Form (Initially Hidden) -->
-                    <div id="booking-form-container" class="hidden w-full text-left space-y-4 pt-4 border-t border-white/10 animate-fade-in">
+                    <!-- Inline Booking Form (Skype) -->
+                    <div id="skype-form-container" class="hidden w-full text-left space-y-4 pt-4 border-t border-white/10 animate-fade-in">
                         <div class="space-y-1.5">
                             <label data-key="lbl-user-email" class="text-xs font-semibold text-slate-300">Your Email Address</label>
-                            <input type="email" id="user-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                            <input type="email" id="skype-user-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
                         </div>
 
                         <div class="space-y-1.5">
@@ -254,11 +256,11 @@
 
                         <div class="space-y-1.5">
                             <label data-key="lbl-datetime" class="text-xs font-semibold text-slate-300">Desired Date & Time</label>
-                            <input type="datetime-local" id="desired-datetime" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                            <input type="datetime-local" id="skype-desired-datetime" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
                         </div>
 
                         <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                            <button onclick="submitBooking()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs lg:text-sm transition shadow-md flex items-center justify-center gap-2">
+                            <button onclick="submitBooking('skype')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs lg:text-sm transition shadow-md flex items-center justify-center gap-2">
                                 <span data-key="btn-send">Send Request</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
                             </button>
                             <span data-key="form-notice" class="text-[11px] text-slate-400 italic leading-snug text-center sm:text-left">
@@ -266,11 +268,72 @@
                             </span>
                         </div>
 
-                        <div id="booking-confirmation" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
+                        <div id="skype-booking-confirmation" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
                             Request received! We will reach out to you shortly.
                         </div>
                     </div>
                 </div>
+
+                <!-- 2. Meet In Person (Orange County) Card -->
+                <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center space-y-5 border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 transition-all">
+                    <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-4xl font-extrabold text-white">$120</span>
+                        <span data-key="inperson-rate" class="text-slate-400 text-sm"> / hr</span>
+                    </div>
+                    <p data-key="inperson-desc" class="text-sm text-slate-400">Meet in person in Orange County for tailored 1-on-1 health coaching and lifestyle guidance.</p>
+                    
+                    <button onclick="toggleBookingForm('inperson')" class="w-full py-3 rounded-xl accent-gradient-bg text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 hover:opacity-95">
+                        <span data-key="inperson-btn">Book In-Person Session</span> <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    </button>
+
+                    <!-- Small Payment Method Subtext -->
+                    <p data-key="payment-subtext-2" class="text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5 -mt-2">
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5 text-emerald-400"></i> Pay with Venmo / PayPal
+                    </p>
+
+                    <!-- Inline Booking Form (In Person) -->
+                    <div id="inperson-form-container" class="hidden w-full text-left space-y-4 pt-4 border-t border-white/10 animate-fade-in">
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-user-email" class="text-xs font-semibold text-slate-300">Your Email Address</label>
+                            <input type="email" id="inperson-user-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-send-email" class="text-xs font-semibold text-slate-300">Send To Email Address</label>
+                            <input type="email" value="everydaylotus.info@gmail.com" readonly class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/50 border border-white/10 text-emerald-300 font-medium text-sm cursor-not-allowed">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-desired-location" class="text-xs font-semibold text-slate-300">Desired Location</label>
+                            <select id="inperson-desired-location" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-emerald-500 transition cursor-pointer">
+                                <option value="Park" data-key="opt-park">Park</option>
+                                <option value="Coffee Shop" data-key="opt-coffeeshop">Coffee Shop</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label data-key="lbl-datetime" class="text-xs font-semibold text-slate-300">Desired Date & Time</label>
+                            <input type="datetime-local" id="inperson-desired-datetime" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                            <button onclick="submitBooking('inperson')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs lg:text-sm transition shadow-md flex items-center justify-center gap-2">
+                                <span data-key="btn-send">Send Request</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <span data-key="form-notice" class="text-[11px] text-slate-400 italic leading-snug text-center sm:text-left">
+                                Once we get your email we will contact you as early as possible.
+                            </span>
+                        </div>
+
+                        <div id="inperson-booking-confirmation" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-medium">
+                            Request received! We will reach out to you shortly.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -394,7 +457,7 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-3 pt-2 border-t border-white/5">
-                        <img src="image1.jpg" alt="Sarah M." class="w-12 h-12 rounded-full object-cover border-2 border-emerald-400/50 shadow-md">
+                        <img src="images (1).jpg" alt="Sarah M." class="w-12 h-12 rounded-full object-cover border-2 border-emerald-400/50 shadow-md">
                         <div>
                             <h4 class="text-xs font-semibold text-white">Sarah M.</h4>
                             <p data-key="review1-role" class="text-[11px] text-slate-400">1-on-1 Coaching Client</p>
@@ -417,7 +480,7 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-3 pt-2 border-t border-white/5">
-                        <img src="image2.jpg" alt="Mei-Ling K." class="w-12 h-12 rounded-full object-cover border-2 border-indigo-400/50 shadow-md">
+                        <img src="Okazaki-headshot-horizontal-scaled-e1647288078450.jpg" alt="Mei-Ling K." class="w-12 h-12 rounded-full object-cover border-2 border-indigo-400/50 shadow-md">
                         <div>
                             <h4 class="text-xs font-semibold text-white">Mei-Ling K.</h4>
                             <p data-key="review2-role" class="text-[11px] text-slate-400">YouTube Subscriber</p>
@@ -440,7 +503,7 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-3 pt-2 border-t border-white/5">
-                        <img src="image3.jpg" alt="Elena R." class="w-12 h-12 rounded-full object-cover border-2 border-cyan-400/50 shadow-md">
+                        <img src="images.jpg" alt="Elena R." class="w-12 h-12 rounded-full object-cover border-2 border-cyan-400/50 shadow-md">
                         <div>
                             <h4 class="text-xs font-semibold text-white">Elena R.</h4>
                             <p data-key="review3-role" class="text-[11px] text-slate-400">Fitness & Wellness Client</p>
@@ -517,15 +580,15 @@
             player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         }
 
-        function toggleBookingForm() {
-            const form = document.getElementById('booking-form-container');
+        function toggleBookingForm(type) {
+            const form = document.getElementById(`${type}-form-container`);
             form.classList.toggle('hidden');
         }
 
-        function submitBooking() {
-            const userEmail = document.getElementById('user-email').value;
-            const datetime = document.getElementById('desired-datetime').value;
-            const confirmBox = document.getElementById('booking-confirmation');
+        function submitBooking(type) {
+            const userEmail = document.getElementById(`${type}-user-email`).value;
+            const datetime = document.getElementById(`${type}-desired-datetime`).value;
+            const confirmBox = document.getElementById(`${type}-booking-confirmation`);
 
             if (!userEmail || !datetime) {
                 alert(currentLang === 'en' ? 'Please fill in your email address and desired date/time.' : '請填寫您的電子郵件地址與期望的日期和時間。');
@@ -535,7 +598,7 @@
             confirmBox.classList.remove('hidden');
             setTimeout(() => {
                 confirmBox.classList.add('hidden');
-                document.getElementById('booking-form-container').classList.add('hidden');
+                document.getElementById(`${type}-form-container`).classList.add('hidden');
             }, 4000);
         }
 
@@ -565,6 +628,13 @@
                 "skype-desc": "1-on-1 health coaching, nutrition guidance, and personalized wellness planning — all over Skype.",
                 "skype-btn": "Book a Skype Call",
                 "payment-subtext": "Pay with Venmo / PayPal",
+                "payment-subtext-2": "Pay with Venmo / PayPal",
+                "inperson-rate": " / hr",
+                "inperson-desc": "Meet in person in Orange County for tailored 1-on-1 health coaching and lifestyle guidance.",
+                "inperson-btn": "Book In-Person Session",
+                "lbl-desired-location": "Desired Location",
+                "opt-park": "Park",
+                "opt-coffeeshop": "Coffee Shop",
                 "lbl-user-email": "Your Email Address",
                 "lbl-send-email": "Send To Email Address",
                 "lbl-datetime": "Desired Date & Time",
@@ -617,6 +687,13 @@
                 "skype-desc": "一對一健康教練、營養指導與個人化健康規劃 — 全部透過 Skype 進行。",
                 "skype-btn": "預約 Skype 諮詢",
                 "payment-subtext": "支援 Venmo / PayPal 付款",
+                "payment-subtext-2": "支援 Venmo / PayPal 付款",
+                "inperson-rate": " / 小時",
+                "inperson-desc": "於加州橘郡（Orange County）進行面對面客製化一對一健康與生活方式指導諮詢。",
+                "inperson-btn": "預約面對面諮詢",
+                "lbl-desired-location": "期望地點",
+                "opt-park": "公園",
+                "opt-coffeeshop": "咖啡館",
                 "lbl-user-email": "您的電子郵件地址",
                 "lbl-send-email": "發送至電子郵件",
                 "lbl-datetime": "期望的日期與時間",
