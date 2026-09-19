@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Everyday Lotus — Cindy, Certified Health Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2C3B2E;
+    --cream: #FAF7F2;
+    --rose: #C97B84;
+    --sage: #7C9885;
+    --taupe: #8A8578;
+    --card: #FFFFFF;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ink: #EFE9E0;
+      --cream: #1E241F;
+      --card: #262E27;
+      --taupe: #A6A093;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #EFE9E0;
+    --cream: #1E241F;
+    --card: #262E27;
+    --taupe: #A6A093;
+  }
+  * { box-sizing: border-box; }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, sans-serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3rem;
+  }
+  .mark {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .role {
+    font-size: 1.05rem;
+    color: var(--rose);
+    margin: 0 0 2.5rem;
+  }
+  .bio {
+    font-size: 1.05rem;
+    max-width: 52ch;
+    color: var(--ink);
+    opacity: 0.92;
+  }
+  .bio p { margin: 0 0 1.1rem; }
+  .notice {
+    margin: 2.5rem 0;
+    padding: 1.1rem 1.3rem;
+    background: var(--card);
+    border-left: 3px solid var(--sage);
+    border-radius: 2px;
+    font-size: 0.95rem;
+    color: var(--taupe);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 2.5rem;
+  }
+  .links a {
+    display: inline-block;
+    padding: 0.65rem 1.2rem;
+    border: 1px solid var(--sage);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .links a:hover, .links a:focus-visible {
+    background: var(--sage);
+    color: var(--cream);
+    outline: none;
+  }
+  footer {
+    margin-top: 3.5rem;
+    font-size: 0.85rem;
+    color: var(--taupe);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <svg class="mark" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M22 38C22 38 8 30 8 18C8 12 13 8 18 10C20 11 22 14 22 18C22 14 24 11 26 10C31 8 36 12 36 18C36 30 22 38 22 38Z" fill="#C97B84" opacity="0.85"/>
+      <path d="M22 38C22 38 22 24 22 18C22 12 22 8 22 8" stroke="#7C9885" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+
+    <h1>Cindy</h1>
+    <p class="role">Certified Health Coach · Everyday Lotus</p>
+
+    <div class="bio">
+      <p>I hold a BS in computer science from Iowa State and an MS from USC, and I'm certified through the Institute for Integrative Nutrition. These days I'm focused on helping others — and myself — get healthier and happier.</p>
+      <p>When I'm not coaching, I'm reading health books, working through a podcast queue, baking (and eating) experimental healthy cookies, and making videos to connect with people on the same path.</p>
+    </div>
+
+    <div class="notice">
+      My main site is being renewed right now — thanks for your patience. In the meantime, find me on YouTube or Instagram below.
+    </div>
+
+    <div class="links">
+      <a href="https://www.youtube.com/@Cindy-nq2vw" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.facebook.com/healthycoach.iin" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/everydaylotus.ii" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <footer>Everyday Lotus &middot; Personal health coaching</footer>
+  </div>
+</body>
+</html>
